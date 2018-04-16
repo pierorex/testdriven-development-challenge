@@ -1,0 +1,97 @@
+[
+  {
+    "productId": "banana",
+    "price": 0.32,
+    "taxRate": 0.07
+  },
+  {
+    "productId": "tomatoes",
+    "price": 1.09,
+    "taxRate": 0.07
+  },
+  {
+    "productId": "zucchini",
+    "price": 0.39,
+    "taxRate": 0.07
+  },
+  {
+    "productId": "carrots",
+    "price": 1.45,
+    "taxRate": 0.07
+  },
+  {
+    "productId": "cucumber",
+    "price": 0.59,
+    "taxRate": 0.07
+  },
+  {
+    "productId": "potatoes",
+    "price": 1.99,
+    "taxRate": 0.07
+  },
+  {
+    "productId": "salad",
+    "price": 0.99,
+    "taxRate": 0.07
+  },
+  {
+    "productId": "mushrooms",
+    "price": 1.99,
+    "taxRate": 0.07
+  },
+  {
+    "productId": "eggs",
+    "price": 2.19,
+    "taxRate": 0.07
+  },
+  {
+    "productId": "butter",
+    "price": 1.59,
+    "taxRate": 0.07
+  },
+  {
+    "productId": "sugar",
+    "price": 0.65,
+    "taxRate": 0.07
+  },
+  {
+    "productId": "toast",
+    "price": 0.85,
+    "taxRate": 0.07
+  },
+  {
+    "productId": "apple",
+    "price": 0.8,
+    "taxRate": 0.07
+  },
+  {
+    "productId": "orange",
+    "price": 0.9,
+    "taxRate": 0.07
+  },
+  {
+    "productId": "milk",
+    "price": 1.19,
+    "taxRate": 0.19
+  },
+  {
+    "productId": "steak",
+    "price": 15.57,
+    "taxRate": 0.19
+  },
+  {
+    "productId": "apple juice",
+    "price": 0.99,
+    "taxRate": 0.19
+  },
+  {
+    "productId": "stamps",
+    "price": 0.65,
+    "taxRate": 0
+  },
+  {
+    "productId": "red wine",
+    "price": 6.99,
+    "taxRate": 0.19
+  }
+]
