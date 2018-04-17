@@ -1,5 +1,6 @@
 from database import Database
 
+
 def test_access_database():
     db = Database()
     sugar = db.get_product("sugar")

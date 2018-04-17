@@ -9,11 +9,13 @@ shopping_cart = [
     {"productId": "stamps", "quantity": 4},
 ]
 
+
 def test_shopping_cart_in_db():
     """ check that we have all products of the shopping cart in the database"""
     db = Database()
     for item in shopping_cart:
         assert db.get_product(item['productId']) is not None
+
 
 def test_calculation():
     """ check that we're able to calculate taxes and totals """
