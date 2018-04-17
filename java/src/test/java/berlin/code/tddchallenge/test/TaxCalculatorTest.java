@@ -10,7 +10,7 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ShoppingExampleTest {
+public class TaxCalculatorTest {
     private ShoppingCart cart;
     private Database db;
 
@@ -34,7 +34,7 @@ public class ShoppingExampleTest {
     }
 
     @Test
-    public void taxCalculatorTest() {
+    public void calculationTest() {
         TaxCalculator calc = new TaxCalculator(db, cart);
 
         // TODO write integration test
