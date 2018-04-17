@@ -1,7 +1,13 @@
 import { Database } from './database';
 import { TaxCalculator } from './taxcalculator';
 
-let shoppingCart = [{"productId":"apple","quantity":5},{"productId":"orange","quantity":4},{"productId":"milk","quantity":2},{"productId":"red wine","quantity":3},{"productId":"stamps","quantity":4}]
+let shoppingCart = [
+    {"productId": "apple", "quantity": 5},
+    {"productId": "orange", "quantity": 4},
+    {"productId": "milk", "quantity": 2},
+    {"productId": "red wine", "quantity": 3},
+    {"productId": "stamps", "quantity": 4},
+];
 
 test('have all products of shopping cart in database', () => {
     let db = new Database();
