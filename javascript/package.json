@@ -1,0 +1,17 @@
+{
+  "name": "tdd-challenge-js",
+  "version": "1.0.0",
+  "description": "Testdriven Development Challenge Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "tdd"
+  ],
+  "author": "Martin Dreher",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^22.4.3"
+  }
+}
