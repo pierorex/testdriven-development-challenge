@@ -14,7 +14,7 @@ public class DatabaseTest {
         Database db = new Database();
         assertEquals(19, db.getProducts().size(), "product count in database is incorrect");
         assertEquals(0.65, db.getProduct("sugar").getPrice(), "price for sugar");
-        assertEquals(0.07, db.getProduct("sugar").getTaxRate(), "taxe rate for sugar");
+        assertEquals(0.07, db.getProduct("sugar").getTaxRate(), "tax rate for sugar");
         assertNotNull(db.getProduct("red wine"), "support for spaces in product id");
     }
 
