@@ -1,7 +1,7 @@
 class TaxCalculator:
-    def __init__(self, database, shoppingCart):
+    def __init__(self, database, shopping_cart):
         self.database = database
-        self.shoppingCart = shoppingCart
+        self.shopping_cart = shopping_cart
 
     def get_grandtotal(self):
         return 0  # TODO
