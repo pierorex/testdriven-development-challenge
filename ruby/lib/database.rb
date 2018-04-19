@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'json'
 
 # simulate a database of products

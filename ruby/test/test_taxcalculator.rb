@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'database'
 require 'taxcalculator'
 require 'test/unit'

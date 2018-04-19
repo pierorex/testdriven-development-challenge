@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # calculate taxes for a shopping cart
 class TaxCalculator
   def initialize(database, shopping_cart)

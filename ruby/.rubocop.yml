@@ -3,3 +3,6 @@ Style/TrailingCommaInLiteral:
 
 Layout/SpaceInsideHashLiteralBraces:
   Enabled: false
+
+AllCops:
+  TargetRubyVersion: 2.5
