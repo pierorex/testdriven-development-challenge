@@ -1,0 +1,5 @@
+Style/TrailingCommaInLiteral:
+  Enabled: false
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: false
