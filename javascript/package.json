@@ -1,7 +1,7 @@
 {
   "name": "tdd-challenge-js",
   "version": "1.0.0",
-  "description": "Testdriven Development Challenge Project",
+  "description": "Test-driven Development Challenge Project",
   "main": "index.js",
   "scripts": {
     "test": "jest"
