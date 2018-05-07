@@ -19,5 +19,5 @@ test('have all products of shopping cart in database', () => {
 test('able to calculate taxes and totals', () => {
     let db = new Database();
     let calc = new TaxCalculator(db, shoppingCart);
-    expect(Math.round(calc.getSubtotalTax(0.07), 2)).toBeCloseTo(2.89);
+    expect(Math.round(calc.getSubtotalTax(0.07), 2)).toBeCloseTo(9.98);
 });

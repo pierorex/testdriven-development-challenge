@@ -26,6 +26,6 @@ class TestTaxCalculator < Test::Unit::TestCase
   def test_calculation
     db = Database.new
     calc = TaxCalculator.new(db, shopping_cart)
-    assert_equal(2.89, calc.subtotal_tax(0.07).round(2))
+    assert_equal(9.98, calc.subtotal_tax(0.07).round(2))
   end
 end

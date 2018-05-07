@@ -23,4 +23,4 @@ def test_calculation():
     """ check that we're able to calculate taxes and totals """
     db = Database()
     calc = TaxCalculator(db, get_shopping_cart())
-    assert round(calc.get_subtotal_tax(0.07), 2) == 2.89
+    assert round(calc.get_subtotal_tax(0.07), 2) == 9.98

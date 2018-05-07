@@ -39,6 +39,6 @@ public class TaxCalculatorTest {
 
         // TODO write integration test
 
-        assertEquals(2.89, calc.getSubtotalTax(.07), 0.005, "unexpected subtotal for 7%");
+        assertEquals(9.98, calc.getSubtotalTax(.07), 0.005, "unexpected subtotal for 7%");
     }
 }
