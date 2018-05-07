@@ -38,8 +38,8 @@ def test_get_subtotal_tax():
     """ check that we're able to calculate subtotal taxes"""
     db = Database()
     calc = TaxCalculator(db, get_shopping_cart())
-    assert round(calc.get_subtotal_tax(0.19), 2) == 3.98
-    assert round(calc.get_subtotal_tax(0.07), 2) == 0.7
+    assert round(calc.get_subtotal_tax(0.19), 2) == 3.35
+    assert round(calc.get_subtotal_tax(0.07), 2) == 0.65
 
 
 def test_get_subtotal_tax_empty_taxclass():
