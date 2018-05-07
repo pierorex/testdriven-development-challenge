@@ -15,3 +15,4 @@ def test_all_valid_records():
     for k, v in db.products_by_id.items():
         assert type(v.get('price')) == float
         assert type(v.get('price')) == float
+        assert v.get('productId') is not None
