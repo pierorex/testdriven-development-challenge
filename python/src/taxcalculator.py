@@ -6,11 +6,14 @@ class TaxCalculator:
     def get_tax_rates(self):
         return set([self.db.get_product(p['productId'])['taxRate'] for p in self.shopping_cart])
 
+    def _get_grandtotal_helper(self, f):
+        return sum([f(tax_rate) for tax_rate in self.get_tax_rates()])
+
     def get_grandtotal(self):
-        return sum([self.get_subtotal(tax_rate) for tax_rate in self.get_tax_rates()])
+        return self._get_grandtotal_helper(self.get_subtotal)
 
     def get_grandtotal_tax(self):
-        return sum([self.get_subtotal_tax(tax_rate) for tax_rate in self.get_tax_rates()])
+        return self._get_grandtotal_helper(self.get_subtotal_tax)
 
     def valid_products(self, tax_rate):
         return [p for p in self.shopping_cart if tax_rate == self.db.get_product(p['productId'])['taxRate']]
@@ -26,4 +29,4 @@ class TaxCalculator:
         :param tax_rate:
         :return:
         """
-        return tax_rate * self.get_subtotal(tax_rate)
+        return tax_rate * self.get_subtotal(tax_rate) / (1 + tax_rate)
