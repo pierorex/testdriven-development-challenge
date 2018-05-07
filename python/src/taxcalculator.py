@@ -10,22 +10,24 @@ class ShoppingCartIsNotList(BaseException):
     pass
 
 
+class ProductInCartWithoutQuantity(BaseException):
+    pass
+
+
 class TaxCalculator:
     def __init__(self, db, shopping_cart):
         self.db = db
         self.shopping_cart = shopping_cart
 
-        if type(shopping_cart) != list:
-            raise ShoppingCartIsNotList
+        if type(shopping_cart) != list: raise ShoppingCartIsNotList
 
         # validate quantities type and range
         for p in self.shopping_cart:
-            print(type(p['quantity']))
-            print(p['quantity'])
-            if type(p['quantity']) != int:
-                raise NotIntegerProductQuantity
-            if p['quantity'] < 1:
-                raise NonPositiveProductQuantity
+            try:
+                if type(p['quantity']) != int: raise NotIntegerProductQuantity
+                if p['quantity'] < 1: raise NonPositiveProductQuantity
+            except KeyError:
+                if p.get('quantity') is None: raise ProductInCartWithoutQuantity
 
     def get_tax_rates(self):
         """

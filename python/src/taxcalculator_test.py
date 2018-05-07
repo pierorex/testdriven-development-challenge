@@ -1,7 +1,8 @@
 import pytest
 
 from database import Database
-from taxcalculator import TaxCalculator, NonPositiveProductQuantity, NotIntegerProductQuantity, ShoppingCartIsNotList
+from taxcalculator import TaxCalculator, NonPositiveProductQuantity, NotIntegerProductQuantity, ShoppingCartIsNotList, \
+    ProductInCartWithoutQuantity
 
 
 def get_shopping_cart():
@@ -25,6 +26,12 @@ def test_cart_is_list():
     db = Database()
     with pytest.raises(ShoppingCartIsNotList):
         TaxCalculator(db, {"productId": "orange", "quantity": 5})
+
+
+def test_cart_products_contain_quantity():
+    db = Database()
+    with pytest.raises(ProductInCartWithoutQuantity):
+        TaxCalculator(db, [{"productId": "apple", "quantity": 5}, {"productId": "orange"}])
 
 
 def test_negative_product_quantities():
