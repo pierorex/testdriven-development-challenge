@@ -31,9 +31,9 @@ stamps              4         0.65 €         2.60 €         0%      0.00 €
 ==========================================================================
 grand total        18                       12.30 €                 4.00 €
 --------------------------------------------------------------------------
-subtotal  0% tax    4                        0.65 €                 0.00 €
-subtotal  7% tax   11                        2.89 €                 0.65 €
-subtotal 19% tax    3                        6.99 €                 3.35 €
+subtotal  0% tax    4                        2.60 €                 0.00 €
+subtotal  7% tax   11                        9.98 €                 0.65 €
+subtotal 19% tax    3                       20.97 €                 3.35 €
 ```
 
 **Base:** Each supported programming language includes a simple product database implementation with mock data. Prices in the database include tax. A basic skeleton for your result is provided but it's not complete.
