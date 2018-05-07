@@ -39,6 +39,12 @@ class TaxCalculator:
                 if p.get('quantity') is None: raise ProductInCartWithoutQuantity
                 if p.get('productId') is None: raise ProductInCartWithoutId
 
+    def get_summary(self):
+        raise NotImplementedError
+
+    def get_products_summary(self):
+        raise NotImplementedError
+
     def get_tax_rates(self):
         """
         Get tax_rates of the products existing in the shopping cart, without duplicates
@@ -100,3 +106,34 @@ class TaxCalculator:
         :rtype: float
         """
         return tax_rate * self.get_subtotal(tax_rate) / (1 + tax_rate)
+
+    def get_total_price_for_product(self, product):
+        product_from_db = self.db.get_product(product['productId'])
+        return product['quantity'] * product_from_db['price']
+
+    def get_total_tax_for_product(self, product):
+        product_from_db = self.db.get_product(product['productId'])
+        return self.get_total_price_for_product(product) * product_from_db['taxRate'] / (1 + product_from_db['taxRate'])
+
+    def get_count_in_category(self, tax_rate):
+        valid_products = self.valid_products(tax_rate)
+        return sum([p['quantity'] for p in valid_products])
+
+    def get_count_in_cart(self):
+        return sum(self.get_count_in_category(tax_rate) for tax_rate in self.get_tax_rates())
+
+    def get_grandtotal_summary(self):
+        # res = {"quantity": 0.0, "price_total": 0.0, "tax_total": 0.0}
+        # for subtotal in self.get_subtotal_summary():
+        #     res[]
+        raise NotImplementedError
+
+    def get_subtotal_summary(self):
+        res = {}
+        for tax_rate in self.get_tax_rates():
+            res[tax_rate] = {
+                "quantity": self.get_count_in_category(tax_rate),
+                "price_total": round(self.get_subtotal(tax_rate), 2),
+                "tax_total": round(self.get_subtotal_tax(tax_rate), 2)
+            }
+        return res
