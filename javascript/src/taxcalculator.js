@@ -9,7 +9,7 @@ export class TaxCalculator {
         return 0; // TODO
     }
 
-    getGrandtotalTax(taxRate) {
+    getGrandtotalTax() {
         return 0; // TODO
     }
 

@@ -6,7 +6,7 @@ class TaxCalculator:
     def get_grandtotal(self):
         return 0  # TODO
 
-    def get_grandtotal_tax(self, tax_rate):
+    def get_grandtotal_tax(self):
         return 0  # TODO
 
     def get_subtotal(self, tax_rate):

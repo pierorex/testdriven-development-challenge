@@ -16,3 +16,7 @@ gradle-app.setting
 
 # intellij output directory
 out
+.classpath
+.project
+.settings
+bin

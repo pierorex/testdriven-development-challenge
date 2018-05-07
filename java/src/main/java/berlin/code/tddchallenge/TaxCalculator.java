@@ -8,11 +8,11 @@ public class TaxCalculator {
         // TODO
     }
 
-    public double getGrandtotal(double taxRate) {
+    public double getGrandtotal() {
         return 0; // TODO
     }
 
-    public double getGrandtotalTax(double taxRate) {
+    public double getGrandtotalTax() {
         return 0; // TODO
     }
 

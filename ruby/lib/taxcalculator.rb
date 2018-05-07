@@ -11,7 +11,7 @@ class TaxCalculator
     0  # TODO
   end
 
-  def grandtotal_tax(tax_rate)
+  def grandtotal_tax()
     0  # TODO
   end
 
