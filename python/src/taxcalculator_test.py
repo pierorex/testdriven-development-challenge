@@ -1,5 +1,7 @@
+import pytest
+
 from database import Database
-from taxcalculator import TaxCalculator
+from taxcalculator import TaxCalculator, NonPositiveProductQuantity, NotIntegerProductQuantity
 
 
 def get_shopping_cart():
@@ -10,6 +12,28 @@ def get_shopping_cart():
         {"productId": "red wine", "quantity": 3},
         {"productId": "stamps", "quantity": 4},
     ]
+
+
+# def test_get_receipt():
+#     """ check that we're able to create receipts as requested by the challenge"""
+#     db = Database()
+#     calc = TaxCalculator(db, get_shopping_cart())
+
+
+def test_negative_product_quantities():
+    """ check that we're able to raise exceptions in case of invalid quantities"""
+    db = Database()
+    with pytest.raises(NonPositiveProductQuantity):
+        TaxCalculator(db, [{"productId": "orange", "quantity": 5}, {"productId": "apple", "quantity": -5}])
+    with pytest.raises(NonPositiveProductQuantity):
+        TaxCalculator(db, [{"productId": "orange", "quantity": 0}, {"productId": "apple", "quantity": 5}])
+
+
+def test_integer_product_quantities():
+    """ check that we're able to raise exceptions in case of invalid quantities"""
+    db = Database()
+    with pytest.raises(NotIntegerProductQuantity):
+        TaxCalculator(db, [{"productId": "orange", "quantity": 3.5}, {"productId": "apple", "quantity": 5}])
 
 
 def test_shopping_cart_in_db():
